@@ -84,19 +84,46 @@
         }
     </style>
 </head>
+
+<!--
+<h2>İnceleme</h2>
+<p>Bu mekan Yenimahalle'de bulunuyor. İstanbul metrosu yakınında bulunan dükkanların biriktiği, şu an tahmin edebildiğini umduğum o caddenin hemen üstünde. Neon-vari ışıklarla süslenmiş, her an içeriden bir cyborg çıkabilecekmiş gibi, cyberpunk atmosferini yaşadığımız bir mekan oldu.
+</p>
+
+<p>
+Yemekler genel olarak fena değildi. Bir müdavim olarak ben lezzetten havalara uçmadım, "bu yediğim inanılmaz şey nedir" gibi bir tepki vermedim. Ancak Asya mutfağıyla alakalı hevesi olan ve bu hevesini kırmak isteyen birine uygun bir yer gibi. Fiyatlar da ucuz değildi diye hatırlıyorum.
+-->
+
+<script>
+    function average() {
+        let c1 = parseFloat(document.getElementById("c1").innerText);
+        let c2 = parseFloat(document.getElementById("c2").innerText);
+        let c3 = parseFloat(document.getElementById("c3").innerText);
+        let c4 = parseFloat(document.getElementById("c4").innerText);
+        let c5 = parseFloat(document.getElementById("c5").innerText);
+
+        let avg = Math.ceil((c1+c2+c3+c4+c5)*10/5)/10;
+
+        document.getElementById("result").innerText = avg.toFixed(1);
+    }
+
+    window.onload = function() {
+        average();
+    };
+
+</script>
+
 <body>
     <header>
         <h1>China Wind</h1>
     </header>
 
     <section>
-        <h2>İnceleme</h2>
-        <p>Bu mekan Yenimahalle'de bulunuyor. İstanbul metrosu yakınında bulunan dükkanların biriktiği, şu an tahmin edebildiğini umduğum o caddenin hemen üstünde. Neon-vari ışıklarla süslenmiş, her an içeriden bir cyborg çıkabilecekmiş gibi, cyberpunk atmosferini yaşadığımız bir mekan oldu.
-        </p>
-
-        <p>
-        Yemekler genel olarak fena değildi. Bir müdavim olarak ben lezzetten havalara uçmadım, "bu yediğim inanılmaz şey nedir" gibi bir tepki vermedim. Ancak Asya mutfağıyla alakalı hevesi olan ve bu hevesini kırmak isteyen birine uygun bir yer gibi. Fiyatlar da ucuz değildi diye hatırlıyorum.
-        <h2>Sonuç</h2>
+        <h2>Not</h2>
+        <p>Neon-vari ışıklar ve cyberpunk atmosferi</p>
+        <br>
+        
+        <h2>Puanlama</h2>
         <table>
             <thead>
                 <tr>
@@ -107,28 +134,33 @@
             <tbody>
                 <tr>
                     <td>Lezzet</td>
-                    <td>8</td>
+                    <td id="c1">7.4</td>
                 </tr>
                 <tr>
                     <td>İlgi</td>
-                    <td>9</td>
+                    <td id="c2">7</td>
                 </tr>
                 <tr>
                     <td>Fiyat</td>
-                    <td>7</td>
+                    <td id="c3">6</td>
                 </tr>
                 <tr>
-                    <td>Mudavim factor</td>
-                    <td>8</td>
+                    <td>Mekan</td>
+                    <td id="c4">7.7</td>
+                </tr>
+                <tr>
+                    <td>Ulaşım</td>
+                    <td id="c5">7</td>
                 </tr>
             </tbody>
         </table>
 
-        <h2>Final Score: 8.0</h2>
+        <h2>Sonuç: <span id="result"></span></h2>
     </section>
 
     <footer>
         <p><a href="index.html">Ana sayfaya</a> dön.</p>
     </footer>
 </body>
+
 </html>
